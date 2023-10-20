@@ -1,1 +1,27 @@
-{"name":"Chrome extension","description":"Generated with chrome extension generator","version":"0.1.0","manifest_version":3,"icons":{"16":"icon16.png","48":"icon48.png","128":"icon128.png"},"action":{"default_popup":"popup.html","default_icon":{}},"background":{"service_worker":"background.js"},"content_scripts":[{"matches":["http://*/*","https://*/*"],"run_at":"document_end","js":["contentScript.js"],"css":["contentScript.css"]}]}
+{
+    "manifest_version": 3,
+    "name": "Holdet.dk Manager Spil - Helper",
+    "version": "0.1",
+    "description": "Få stats og nyttig information om alle spillere. Uden at skulle søge det frem selv.",
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "permissions": [
+        "storage"
+    ],
+    "content_scripts": [
+        {
+            "js": [
+                "scripts/contentScript.js"
+            ],
+            "matches": [
+                "https://www.holdet.dk/*"
+            ]
+        }
+    ],
+    "host_permissions": [
+        "https://www.holdet.dk/*"
+      ]
+}
